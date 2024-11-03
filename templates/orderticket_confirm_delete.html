@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Delete Order{% endblock %}
+{% block content %}
+<h2>Are you sure you want to delete this order?</h2>
+<p>Ticket Quantity: {{ object.ticket_quantity }}</p>
+<p>User: {{ object.name_of_user.first_name }} {{ object.name_of_user.last_name }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+<a href="{% url 'orderticket_list' %}">Cancel</a>
+{% endblock %}

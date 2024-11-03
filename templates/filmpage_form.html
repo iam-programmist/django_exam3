@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Add/Edit Film{% endblock %}
+{% block content %}
+<h2>{% if object %}Edit{% else %}Add{% endif %} Film</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'filmpage_list' %}">Cancel</a>
+{% endblock %}

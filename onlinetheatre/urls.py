@@ -1,0 +1,30 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('', HomePageListView.as_view(), name = 'homepage_list'),
+    path('homepage/<int:pk>/', HomePageDetailView.as_view(), name = 'homepage_detail'),
+    path('homepage/create/', HomePageCreateView.as_view(), name = 'homepage_create'),
+    path('homepage/update/<int:pk>/', HomePageUpdateView.as_view(), name = 'homepage_update'),
+    path('homepage/delete/<int:pk>/', HomePageDeleteView.as_view(), name = 'homepage_delete'),
+    path('filmpage/', FilmPageListView.as_view(), name='filmpage_list'),
+    path('filmpage/<int:pk>/', FilmPageDetailView.as_view(), name='filmpage_detail'),
+    path('filmpage/create/', FilmPageCreateView.as_view(), name='filmpage_create'),
+    path('filmpage/update/<int:pk>/', FilmPageUpdateView.as_view(), name='filmpage_update'),
+    path('filmpage/delete/<int:pk>/', FilmPageDeleteView.as_view(), name='filmpage_delete'),
+    path('user/', UserListView.as_view(), name='user_list'),
+    path('user/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
+    path('user/create/', UserCreateView.as_view(), name='user_create'),
+    path('user/update/<int:pk>/', UserUpdateView.as_view(), name='user_update'),
+    path('user/delete/<int:pk>/', UserDeleteView.as_view(), name='user_delete'),
+    path('orderticket/', OrderTicketListView.as_view(), name='orderticket_list'),
+    path('orderticket/<int:pk>/', OrderTicketDetailView.as_view(), name='orderticket_detail'),
+    path('orderticket/create/', OrderTicketCreateView.as_view(), name='orderticket_create'),
+    path('orderticket/update/<int:pk>/', OrderTicketUpdateView.as_view(), name='orderticket_update'),
+    path('orderticket/delete/<int:pk>/', OrderTicketDeleteView.as_view(), name='orderticket_delete'),
+    path('payment/', PaymentListView.as_view(), name='payment_list'),
+    path('payment/<int:pk>/', PaymentDetailView.as_view(), name='payment_detail'),
+    path('payment/create/', PaymentCreateView.as_view(), name='payment_create'),
+    path('payment/update/<int:pk>/', PaymentUpdateView.as_view(), name='payment_update'),
+    path('payment/delete/<int:pk>/', PaymentDeleteView.as_view(), name='payment_delete'),
+]

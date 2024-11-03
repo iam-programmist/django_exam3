@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home Page List{% endblock %}
+{% block content %}
+    <h2>Home Page List</h2>
+    <a href="{% url 'homepage_create' %}">Create New Home Page Entry</a>
+    <ul>
+        {% for homepage in object_list %}
+            <li>
+                <a href="{% url 'homepage_detail' homepage.pk %}">{{ homepage }}</a> |
+                <a href="{% url 'homepage_update' homepage.pk %}">Edit</a> |
+                <a href="{% url 'homepage_delete' homepage.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

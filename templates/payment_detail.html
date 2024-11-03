@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Payment Detail{% endblock %}
+{% block content %}
+<h2>Payment Detail</h2>
+<p>Online Payment: {{ object.online_payment }}</p>
+<p>Cash Payment: {{ object.cash_payment }}</p>
+<p>Ticket Price Information: {{ object.ticket_price_information }}</p>
+<a href="{% url 'payment_list' %}">Back to Payment List</a>
+{% endblock %}

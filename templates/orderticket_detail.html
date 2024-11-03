@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Order Detail{% endblock %}
+{% block content %}
+<h2>Order Detail</h2>
+<p>Ticket Quantity: {{ object.ticket_quantity }}</p>
+<p>User: {{ object.name_of_user.first_name }} {{ object.name_of_user.last_name }}</p>
+<p>Phone: {{ object.phone_of_user.phone_number }}</p>
+<p>Order Date: {{ object.order_confirm_date }}</p>
+<p>Theater Confirm: {{ object.theater_order_confirm }}</p>
+<a href="{% url 'orderticket_list' %}">Back to Order List</a>
+{% endblock %}

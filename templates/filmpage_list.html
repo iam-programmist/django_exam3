@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Film List{% endblock %}
+{% block content %}
+<h2>Film List</h2>
+<a href="{% url 'filmpage_create' %}">Add New Film</a>
+<ul>
+    {% for film in object_list %}
+        <li>
+            <a href="{% url 'filmpage_detail' film.pk %}">{{ film.show_information }}</a>
+            (<a href="{% url 'filmpage_update' film.pk %}">Edit</a> | 
+            <a href="{% url 'filmpage_delete' film.pk %}">Delete</a>)
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Film Detail{% endblock %}
+{% block content %}
+<h2>{{ object.show_information }}</h2>
+<p>Theater: {{ object.theater_name }}</p>
+<p>Date: {{ object.show_date }}</p>
+<p>Order Ticket: {{ object.order_ticket }}</p>
+<a href="{% url 'filmpage_list' %}">Back to Film List</a>
+{% endblock %}

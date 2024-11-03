@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home Page Detail{% endblock %}
+{% block content %}
+    <h2>{{ object.film_available }} Details</h2>
+    <p>Trailer Name: {{ object.trailer_name }}</p>
+    <p>Genre: {{ object.trailer_genre }}</p>
+    <p>Release Date: {{ object.trailer_date }}</p>
+    <p>Watch Trailer: {{ object.watch_trailer }}</p>
+    <a href="{% url 'homepage_update' object.pk %}">Edit</a> |
+    <a href="{% url 'homepage_delete' object.pk %}">Delete</a>
+    <a href="{% url 'homepage_list' %}">Back to List</a>
+{% endblock %}

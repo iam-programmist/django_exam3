@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Online Theater{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'homepage_list' %}">Online Theater</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'homepage_list' %}">Home Page</a></li>
+                <li><a href="{% url 'filmpage_list' %}">Film Page</a></li>
+                <li><a href="{% url 'user_list' %}">Users</a></li>
+                <li><a href="{% url 'orderticket_list' %}">Order Tickets</a></li>
+                <li><a href="{% url 'payment_list' %}">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; Create by alik</p>
+    </footer>
+</body>
+</html>
